@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Apps'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,10 +57,28 @@ WSGI_APPLICATION = 'Accounting.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'Accounting',
+        'ENGINE': 'sqlserver_ado',
+        'HOST': '127.0.0.1',
+        'USER': 'fafam',
+        'PASSWORD': '56%ty$23ui7&',
+        'OPTIONS': {
+            'driver': 'SQL Native Client 10.0',
+            'MARS_Connection': True,
+        },
     }
 }
 
@@ -82,4 +101,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
