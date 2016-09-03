@@ -15,13 +15,15 @@
 
 </head>
 <body>
-<div class="grid">
+<div class="grid" ng-controller="main_controller">
 
     <p>
-    {%verbatim%}
-        {{ 6/4 }}
-    {%endverbatim%}
+        {% verbatim %}
+        {{ 6/4 }} <br>
+        {{ msg }}
+        {% endverbatim %}
     </p>
+    <a href="#/add-counterparty">ایجاد طرف حساب</a>
 </div>
 </body>
 </html>
