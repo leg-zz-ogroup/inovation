@@ -29,7 +29,7 @@ class ActualCounterparty(models.Model):  # moshtari haghighi
 
 class LegalCounterparty(models.Model):
     Name = models.CharField(max_length=100)
-    ToBeRegistered = models.BooleanField()  # dar shorofe taasis
+    ToBeRegistered = models.BooleanField(default=False)  # dar shorofe taasis
     EconomicCode = models.CharField(max_length=8)  # code eghtesadi
     NationalId = models.CharField(max_length=10)  # shenase melli
     RegisterNumber = models.IntegerField()  # shomare sabt
@@ -76,14 +76,14 @@ class CounterpartyBaseInformation(models.Model):  # tarafe hesab
     ManualCode = models.CharField(max_length=10, unique=True)  # code dasti
     DateCreated = models.DateField()
     TimeCreated = models.TimeField()
-    IsCounterpartyTypeActual = models.BooleanField(null=False)
+    IsCounterpartyTypeActual = models.BooleanField(null=False, default=False)
     ActualCounterparty = models.ForeignKey(ActualCounterparty, null=True)
     LegalCounterparty = models.ForeignKey(LegalCounterparty, null=True)
     DeliveryStartTime = models.TimeField()
     DeliveryStopTime = models.TimeField()
-    IsOwnershipTypeOwner = models.BooleanField(null=False)
-    IsCounterpartySeller = models.BooleanField()
-    IsCounterpartyPurchaser = models.BooleanField()
+    IsOwnershipTypeOwner = models.BooleanField(null=False, default=False)
+    IsCounterpartySeller = models.BooleanField(default=False)
+    IsCounterpartyPurchaser = models.BooleanField(default=False)
     PurchaserCreditType = models.ForeignKey(PurchaserCreditType)
     PurchaserCredit = models.ForeignKey(PurchaserCredit, null=True)
     Path = models.ForeignKey(Path)
