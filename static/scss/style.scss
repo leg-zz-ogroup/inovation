@@ -1,0 +1,13 @@
+$width : 100px;
+$color: #888;
+
+body{
+  width: 100%;
+  div{
+    width: $width;
+    color: $color;
+    .ali{
+      background: $color - #111
+    }
+  }
+}

@@ -3,34 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>فهرست طرف های حساب حقیقی</title>
+    {% load static %}
+
+    <script type="text/javascript" src="../lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    <link type="text/css" href="../lib/bootstrap/dist/css/bootstrap.css" />
+    <link type="text/css" href="css/style.css" />
+
 </head>
-<body>
-<table border="1" align="center">
-    <tr>
-        <td>کد</td>
-        <td>نام</td>
-        <td>نام خانوادگی</td>
-        <td>شغل</td>
-        <td>استان</td>
-        <td>شهر</td>
-        <td>منطقه</td>
-        <td>مسیر</td>
-        <td>آدرس</td>
-    </tr>
-    {% for counterparty in counterparty_list %}
-        <tr>
-            <td>{{ counterparty.code }}</td>
-            <td>{{ counterparty.name }}</td>
-            <td>{{ counterparty.family }}</td>
-            <td>{{ counterparty.job }}</td>
-            <td>{{ counterparty.state }}</td>
-            <td>{{ counterparty.city }}</td>
-            <td>{{ counterparty.region }}</td>
-            <td>{{ counterparty.path }}</td>
-            <td>{{ counterparty.address }}</td>
-        </tr>
-    {% endfor %}
-</table>
+<body ng-model="accounting">
 
 </body>
 </html>
