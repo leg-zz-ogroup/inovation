@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>فهرست طرف های حساب حقیقی</title>
+    {% load static %}
+
+    <script type="text/javascript" src="{% static 'src/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+{% for counterparty in counterparty_list %}
+    code:{{ counterparty.code }},name:{{ counterparty.name }},family:{{ counterparty.family }},job{{ counterparty.job }},
+    state:{{ counterparty.state }},city:{{ counterparty.city }},region:{{ counterparty.region }},path:
+    {{ counterparty.path }},address:{{ counterparty.address }}
+{% endfor %}
+
+</body>
+</html>

@@ -10,11 +10,13 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "static",
     "test",
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "datatables.net": "^1.10.12",
+    "datatables.net-dt": "^1.10.12"
   }
 }
