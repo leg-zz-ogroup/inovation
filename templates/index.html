@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="accounting">
 <head>
     <meta charset="UTF-8">
-    <title>فهرست طرف های حساب حقیقی</title>
+    <title>Main Page</title>
     {% load static %}
 
-    <script type="text/javascript" src="../lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/angular/angular.min.js' %} "></script>
+    <script type="text/javascript" src="{% static 'lib/angular-route/angular-route.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/mainController.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/addCounterParty.js' %}"></script>
 
-    <link type="text/css" href="../lib/bootstrap/dist/css/bootstrap.css" />
-    <link type="text/css" href="css/style.css" />
+    <link type="text/css" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}"/>
+    <link type="text/css" href="{% static 'dist/css/style.css' %}"/>
 
 </head>
-<body ng-model="accounting">
-
+<body>
+        <div ng-view></div>
 </body>
 </html>

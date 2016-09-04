@@ -1,24 +1,18 @@
 (function () {
 
-
-/*var myModel = angular.module('accounting', []).controller('mainController',mainController);
-myModel.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{[{');
-  $interpolateProvider.endSymbol('}]}');
-});*/
-
 var app = angular.module('accounting', ["ngRoute"]);
 
 app.config(function ($routeProvider) {
-    $routeProvider.when("/",{
-        templateUrl: '../../template/index.html',
-        controller: "mainController"
-    });
+    $routeProvider
+        .when("/", {
+            templateUrl: "static/template/mainPage.html",
+            controller: "mainController"
+        })
+        .when("/addCounterParty",{
+            templateUrl: 'static/template/addCounterParty.html',
+            controller: "addCounterPartyController"
+        });
 });
 
-var mainController = function($scope){
-    alert();
-    $scope.msg = 'aaa';
-};
 
 }());
