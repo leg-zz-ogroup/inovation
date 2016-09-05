@@ -4,7 +4,7 @@
   "authors": [
     "amir ajoudanian <ajoudanian@gmail.com>"
   ],
-  "description": "",
+  "description": "Accounting",
   "main": "",
   "license": "MIT",
   "ignore": [
@@ -12,12 +12,16 @@
     "node_modules",
     "static",
     "test",
-    "tests"
+    "tests",
+    "bower_components",
+    "static/lib"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "angular-strap": "^2.3.9",
-    "angular-motion": "^0.4.4",
-    "angular-sanitize": "^1.5.8"
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular": "1.5.8",
+    "angular-ui-grid": "ng-grid#^3.2.1",
+    "font-awesome": "^4.6.3",
+    "bootstrap-rtl": "^3.4.0"
   }
 }
