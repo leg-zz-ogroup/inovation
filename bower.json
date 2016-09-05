@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "datatables.net": "^1.10.12",
-    "datatables.net-dt": "^1.10.12"
+    "angular-strap": "^2.3.9",
+    "angular-motion": "^0.4.4",
+    "angular-sanitize": "^1.5.8"
   }
 }

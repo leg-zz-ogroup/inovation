@@ -3,11 +3,11 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic import TemplateView
 from django.core import serializers
-# from django.http import JsonResponse
 import json
 
 
 from Apps.models import CounterpartyBaseInformation
+from Apps.models import CustomerGroup
 
 
 class CounterParty(TemplateView):
@@ -35,11 +35,21 @@ class CounterParty(TemplateView):
 
                 actual_counterparty_table_info.append(temp_actual_counterparty)
 
-            # return render_to_response('ajax_actual_counterparty_list_maker.html',
-            #                           {'counterparty_list':  actual_counterparty_table_info},
-            #                           context_instance=RequestContext(request))
-            # return JsonResponse(response)
             return HttpResponse(json.dumps([any_actual_counterparty.__dict__ for any_actual_counterparty in actual_counterparty_table_info]))
+
+    @staticmethod
+    def counter_group_maker(request):
+        if request.method == 'GET':
+            counter_group_list = CustomerGroup.objects.only("Name")
+            counter_group_list_info = list()
+            temp_counter_group = TempObjectForCounterGroup()
+            for counter_group in counter_group_list:
+                temp_counter_group.id = counter_group.id
+                temp_counter_group.name = counter_group.Name
+
+                counter_group_list_info.append(temp_counter_group)
+
+            return HttpResponse(json.dumps([any_counter_group.__dict__ for any_counter_group in counter_group_list_info]))
 
 class TempObjectForActualParty():
     code = None
@@ -51,3 +61,7 @@ class TempObjectForActualParty():
     region = None
     path = None
     address = None
+
+class TempObjectForCounterGroup():
+    id = None
+    name = None

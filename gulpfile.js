@@ -15,15 +15,15 @@ var paths = {
 
 gulp.task('default', ['sass', 'scripts']);
 gulp.task('sass', function (done) {
-    gulp.src('src/scss/**/*.scss')
+    gulp.src('static/scss/**/*.scss')
         .pipe(sass())
         .on('error', sass.logError)
-        .pipe(gulp.dest('dist/css/'))
+        .pipe(gulp.dest('static/dist/css/'))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
         .pipe(rename({extname: '.min.css'}))
-        .pipe(gulp.dest('dist/css/'))
+        .pipe(gulp.dest('static/dist/css/'))
         .on('end', done);
 });
 

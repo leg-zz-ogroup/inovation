@@ -1,0 +1,18 @@
+<a href="#/addCounterParty">ثبت جدید</a>
+<div ng-controller="counterGridController">
+    <div id="counterGrid" ui-grid="{ data: myData }" class="baseGrid grid"></div>
+</div>
+<br/>
+<br/>
+<div ng-controller="counterGroupController">
+    <div class="bs-docs-section" ng-controller="modalController">
+        <button type="button" class="btn btn-lg btn-danger"
+                data-animation="am-fade-and-slide-top"
+                data-template-url="static/template/modal/add.tpl.html"
+                bs-modal="modal">اضافه کردن
+            <br/>
+            <small>(گروه مشتریان)</small>
+        </button>
+    </div>
+    <div id="groupCounterGrid" ui-grid="{ data: myData }" class="smallGrid grid"></div>
+</div>

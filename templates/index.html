@@ -4,19 +4,59 @@
     <meta charset="UTF-8">
     <title>Main Page</title>
     {% load static %}
+    {##}
+    <link type="text/css" rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+    <link type="text/css" rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'lib/bootstrap-rtl/dist/css/bootstrap-rtl.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'lib/angular-motion/dist/angular-motion.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'dist/css/style.css' %}"/>
 
-    <script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'lib/angular/angular.min.js' %} "></script>
+    <script type="text/javascript" src="{% static 'lib/angular/angular.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/angular-animate/angular-animate.js' %} "></script>
     <script type="text/javascript" src="{% static 'lib/angular-route/angular-route.js' %}"></script>
+    {#    <script type="text/javascript" src="{% static 'lib/angular-ui-grid/src/js/core/directives/ui-grid.js' %} "></script>#}
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <script type="text/javascript" src="{% static 'lib/angular-sanitize/angular-sanitize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/angular-strap/dist/angular-strap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/angular-strap/dist/angular-strap.tpl.js' %}"></script>
+    <script src="//mgcrea.github.io/angular-strap/docs/angular-strap.docs.tpl.js" data-semver="v2.3.8"></script>
+
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/controllers/mainController.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/controllers/addCounterParty.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/modalController.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/gridController.js' %}"></script>
 
-    <link type="text/css" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}"/>
-    <link type="text/css" href="{% static 'dist/css/style.css' %}"/>
 
 </head>
+
 <body>
-        <div ng-view></div>
+<div class="wrapper">
+    <header>
+        <!-- Top Navigation Bar -->
+    </header>
+    <div class="row mainRow">
+        <section class="mainSection col-md-9">
+            <div ng-view class="mainView"></div>
+        </section>
+        <aside class="mainSidebar col-md-3">
+            <!-- Menu -->
+            <ul>
+                <li>
+                    <a href="#/">صفحه اصلی</a>
+                </li>
+                <li>
+                    <a href="#/counterGrid">لیست طرف حساب ها</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <!-- Footer -->
+    </footer>
+</div>
 </body>
+
 </html>

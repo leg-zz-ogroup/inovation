@@ -1,13 +1,35 @@
-$width : 100px;
-$color: #888;
+/*
+@Variables HERE
+*/
 
-body{
-  width: 100%;
-  div{
-    width: $width;
-    color: $color;
-    .ali{
-      background: $color - #111
+body {
+  .wrapper {
+    .baseGrid {
+      height: 300px;
+    }
+    .smallGrid {
+      height: 180px;
+      width: 400px;
+    }
+    .ui-grid-cell {
+      float: right;
+    }
+    header {
+
+    }
+    .mainRow {
+      > * {
+        float: left;
+      }
+      .mainSection {
+
+      }
+      .mainSidebar {
+
+      }
+    }
+    footer {
+
     }
   }
 }

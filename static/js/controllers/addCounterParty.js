@@ -6,6 +6,7 @@
     };
 
     app.controller('addCounterPartyController',addCounterPartyController);
+
 }());
 
 
