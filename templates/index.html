@@ -6,24 +6,25 @@
     {% load static %}
 
     <script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lib/angular/angular.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'lib/angular/angular.min.js' %} "></script>
     <script type="text/javascript" src="{% static 'lib/angular-route/angular-route.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/mainPage.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/controllers/addCounterparty.js' %}"></script>
 
     <link type="text/css" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}"/>
     <link type="text/css" href="{% static 'dist/css/style.css' %}"/>
 
 </head>
 <body>
-<div class="grid" ng-controller="main_controller">
-
-    <p>
-        {% verbatim %}
-        {{ 6/4 }} <br>
-        {{ msg }}
-        {% endverbatim %}
-    </p>
-    <a href="#/add-counterparty">ایجاد طرف حساب</a>
-</div>
+{#<p>#}
+{#    {% verbatim %}#}
+{#    {{ 6/4 }} <br>#}
+{#    {{ msg }}#}
+{#    {% endverbatim %}#}
+{#</p>#}
+{#<a href="#/add-counterparty">ایجاد طرف حساب</a>#}
+<div class="grid" ng-view></div>
 </body>
 </html>
